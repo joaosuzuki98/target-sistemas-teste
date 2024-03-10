@@ -1,169 +1,39 @@
-faturamento = [
-	{
-		"dia": 1,
-		"valor": 22174.1664
-	},
-	{
-		"dia": 2,
-		"valor": 24537.6698
-	},
-	{
-		"dia": 3,
-		"valor": 26139.6134
-	},
-	{
-		"dia": 4,
-		"valor": 0.0
-	},
-	{
-		"dia": 5,
-		"valor": 0.0
-	},
-	{
-		"dia": 6,
-		"valor": 26742.6612
-	},
-	{
-		"dia": 7,
-		"valor": 0.0
-	},
-	{
-		"dia": 8,
-		"valor": 42889.2258
-	},
-	{
-		"dia": 9,
-		"valor": 46251.174
-	},
-	{
-		"dia": 10,
-		"valor": 11191.4722
-	},
-	{
-		"dia": 11,
-		"valor": 0.0
-	},
-	{
-		"dia": 12,
-		"valor": 0.0
-	},
-	{
-		"dia": 13,
-		"valor": 3847.4823
-	},
-	{
-		"dia": 14,
-		"valor": 373.7838
-	},
-	{
-		"dia": 15,
-		"valor": 2659.7563
-	},
-	{
-		"dia": 16,
-		"valor": 48924.2448
-	},
-	{
-		"dia": 17,
-		"valor": 18419.2614
-	},
-	{
-		"dia": 18,
-		"valor": 0.0
-	},
-	{
-		"dia": 19,
-		"valor": 0.0
-	},
-	{
-		"dia": 20,
-		"valor": 35240.1826
-	},
-	{
-		"dia": 21,
-		"valor": 43829.1667
-	},
-	{
-		"dia": 22,
-		"valor": 18235.6852
-	},
-	{
-		"dia": 23,
-		"valor": 4355.0662
-	},
-	{
-		"dia": 24,
-		"valor": 13327.1025
-	},
-	{
-		"dia": 25,
-		"valor": 0.0
-	},
-	{
-		"dia": 26,
-		"valor": 0.0
-	},
-	{
-		"dia": 27,
-		"valor": 25681.8318
-	},
-	{
-		"dia": 28,
-		"valor": 1718.1221
-	},
-	{
-		"dia": 29,
-		"valor": 13220.495
-	},
-	{
-		"dia": 30,
-		"valor": 8414.61
-	}
-]
+lista_a = [1, 3, 5, 7]
+while len(lista_a) <= 10:
+    num_a = lista_a[-1] + 2
+    lista_a.append(num_a)
+print(lista_a)
 
-fatura_values = {}
-i = 0
-# Simplificando o dicionário
-while i <  len(faturamento):    
-    day = faturamento[i].get('dia')
-    value = faturamento[i].get('valor')
-    fatura_values.update({day: value})
-    i += 1
+lista_b = [2, 4, 8, 16, 32, 64]
+while len(lista_b) <= 10:
+    num_b = lista_b[-1] * 2
+    lista_b.append(num_b)
+print(lista_b)
 
-# Ordenando o dicionário pelo maior valor
-fatura_values_desc = sorted(fatura_values.items(), key=lambda x:x[1], reverse=True)
-fatura_values_desc = dict(fatura_values_desc)
+lista_c = [0, 1, 4, 9, 16, 25, 36]
+i_c = 13
+while len(lista_c) <= 10:
+    num_c = lista_c[-1] + i_c
+    i_c += 2
+    lista_c.append(num_c)
+print(lista_c)
 
-# Pegando a primeira chave do dicionário
-maior_valor = list(fatura_values_desc.keys())[0]
+lista_d = [4, 16, 36, 64]
+i_d = 36
+while len(lista_d) <= 10:
+    num_d = lista_d[-1] + i_d
+    i_d += 8
+    lista_d.append(num_d)
+print(lista_d)
 
+lista_e = [1, 1, 2, 3, 5, 8]
+while len(lista_e) <= 10:
+    num_e = lista_e[-1] + lista_e[-2]
+    lista_e.append(num_e)
+print(lista_e)
 
-print(f'O maior valor ocorreu no dia {maior_valor} e foi de {fatura_values_desc[maior_valor]:.2f}')
-
-# Criação da média mensal do faturamento
-v = 1
-media_div = 0
-media_n = 0
-valor_md = fatura_values_desc
-contador = len(fatura_values_desc) + 1
-
-while v < contador:
-    if valor_md[v] != 0.0:
-        media_div += 1
-        media_n += valor_md[v]
-
-    v += 1
-
-media = media_n / media_div
-print(f'A média mensal foi {media:.2f}')
-
-# Calculando o número de dias em que o faturamento ultrapassou a média
-dias_md = 0
-v = 1
-while  v < contador:
-    if valor_md[v] > media and valor_md[v] != 0.0:
-        dias_md += 1
-    
-    v += 1
-    
-print(f'O número de dias em que o faturamento ultrapassou a média foi {dias_md}')
+lista_f = [2, 10, 12, 16, 17, 18, 19]
+while len(lista_f) <= 10:
+    num_f = lista_f[-1] + 1
+    lista_f.append(num_f)
+print(lista_f)

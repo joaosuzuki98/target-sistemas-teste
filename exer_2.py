@@ -1,32 +1,25 @@
-def fibonacci(value):
-    fibo_seq = [0, 1]
-    i = 0
+from time import sleep
 
-    while i < 100:
-        first_num = fibo_seq[i]
-        second_num = fibo_seq[i + 1]
 
-        fibo_index = first_num + second_num
+fibo = int(
+    input(
+        "Digite um número para saber se ele está na sequência de Fibonacci: "
+        ))
 
-        fibo_seq.append(fibo_index)
-
-        i += 1
-
-    if value in fibo_seq:
-        return f'{value} pertence à sequência de Fibonacci\n'
-    else:
-        return f'{value} não pertence à sequência de Fibonacci\n'
-
+fibo_seq = [0, 1]
+i = 0
 
 while True:
-    user_value = input('Digite um número de 0 a 100: ')
+    fibo_num = fibo_seq[i] + fibo_seq[i + 1]
+    fibo_seq.append(fibo_num)
+    i += 1
+    print(fibo_seq)
+    sleep(.5)
 
-    try:
-        user_value = int(user_value)
-    except ValueError:
-        raise ValueError('Digite somente números')
+    if fibo_num > fibo:
+        print(f"O número {fibo} não existe na sequência de Fibonacci")
+        break
 
-    if user_value > 100:
-        print('Digite um número menor que 100\n')
-    else:
-        print(fibonacci(user_value))
+    if fibo in fibo_seq:
+        print(f"O número {fibo} está presente na sequência de Fibonacci.")
+        break
